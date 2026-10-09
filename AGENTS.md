@@ -16,10 +16,4 @@
    动手前先用一次 `read_files` 把锚点原文（含缩进）读准；单次 editor 文本 ≤6000 字，超了先写前半、下一响应追加。
 4. 回答顺序：结论 → 改了哪个文件哪几行 → 怎么用 →（可选）一次验证。不复述日志。中文回答；
    说"只答是/否"就只答是或否。
-5. 已知事实不要重复调查：Stage 1 = `data_processing/RotationalReconstruct.py`；Stage 2 =
-   `RotationalVolume.py` + `RotationalVolumePanel.py`（panel 加载 TIFF 时调 Stage 1）。
-   IDE 运行改 `RotationalVolumePanel.py` 末尾的 `SCAN_FILES`。"Split the B-line at the fold"
-   默认勾选 → `window.segments[0/1]["volume"]` = 按 Xc 切两段、各 360° 的 volume。
-   偏心 pierce 时未勾选面板的"双半圆"是几何必然，不要再证明。
-6. 参数命名只有 `P`/`Xc`/`d`（见 `README_AGENT_RULES.md` 第 5 节）；旧名（`half_turn`/`centre`/`offset`/
-   `axis_px`/`guess_px`/`initial_center`/`--center` 等）只作兼容别名。
+5. 已知事实不要重复调查
