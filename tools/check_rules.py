@@ -2,7 +2,7 @@
 """规则文件硬约束检查：编码、换行符、长度预算、编号连续性。
 
 约定见 README_AGENT_RULES.md 第 11、13 节：
-  - 根目录 md：UTF-8 无 BOM + CRLF；`.clinerules/*.md`、`references/*.md`、`tools/*`：UTF-8 无 BOM + LF
+  - 换行符：根目录 md（README/AGENTS/CLINE_CUSTOM_INSTRUCTIONS/INSTALL）= CRLF；`.clinerules/*.md`、`references/*.md`、`tools/*`、`.github/workflows/*` = LF；全部 UTF-8 无 BOM
   - 长度：README_AGENT_RULES.md <= 150 行，`.clinerules/*.md` <= 60 行，`references/*.md` / INSTALL.md <= 120 行，AGENTS.md <= 30 行
   - `## N.` 章节号与 `N. ` 条目号连续（防止增删规则时把交叉引用写坏）
 
@@ -30,6 +30,7 @@ EXTRA = [
     ("references/*.md", LF, 120),
     ("tools/*", LF, None),
     (".pre-commit-config.yaml", LF, None),
+    (".github/workflows/*", LF, None),
 ]
 
 HEADING_RE = re.compile(r"^## (\d+)\.", re.M)   # ## N. 章节号

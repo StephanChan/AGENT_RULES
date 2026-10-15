@@ -1,0 +1,19 @@
+# 规则文件的硬约束由工具强制，不靠规则正文（README_AGENT_RULES.md 第 11、13 节）
+# 本地可选：pip install pre-commit && pre-commit install（见 .pre-commit-config.yaml）
+# 也方便 agent 找到"这个仓库怎么自检"：agents.md 标准的例子就是「在 .github/workflows 里找 CI plan」
+name: check-rules
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # ubuntu-latest 自带 python3，无需 setup-python（脚本只用标准库）
+      - name: 规则文件检查（编码 / 换行符 / 长度 / 编号）
+        run: python3 tools/check_rules.py

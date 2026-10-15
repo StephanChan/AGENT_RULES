@@ -87,7 +87,7 @@
 
 ## 11. 文件与格式约定
 - 规则文件用中文写；路径、命令、标识符一律加反引号；改动用最小范围编辑，不整文件重排。
-- 编码（UTF-8 无 BOM）、换行符（根目录 md = CRLF；`.clinerules/*.md` 与 `references/*.md` = LF）、长度预算与编号连续性**不靠人眼**：改完跑 `python3 tools/check_rules.py`（`pre-commit` 钩子见 `.pre-commit-config.yaml`）。
+- 编码（UTF-8 无 BOM）、换行符（根目录 md = CRLF；`.clinerules/*.md` 与 `references/*.md` = LF）、长度预算与编号连续性**不靠人眼**：改完跑 `python3 tools/check_rules.py`；本地钩子见 `.pre-commit-config.yaml`，CI 跑同一条命令（`.github/workflows/check-rules.yml`）。
 
 ## 12. 失败、止损与证据
 - **根因优先**：报错先定位根因再改代码；不许把错误"消掉"（空 `except` 吞异常、放宽断言、改测试期望值），也不许顺手改与失败无关的地方。
