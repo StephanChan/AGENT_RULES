@@ -1,0 +1,11 @@
+# 机器可判定的要求用工具强制，不靠规则文件正文（见 README_AGENT_RULES.md 第 11、13 节）
+# 启用：pip install pre-commit && pre-commit install
+repos:
+  - repo: local
+    hooks:
+      - id: check-rules
+        name: 规则文件检查（编码 / 换行符 / 长度 / 编号）
+        entry: python3 tools/check_rules.py
+        language: system
+        files: \.md$
+        pass_filenames: false
