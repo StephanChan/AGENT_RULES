@@ -6,7 +6,7 @@
 建议先建一个**无空格**的稳定路径（仓库以后搬家只改符号链接，全局文本不用动）：
 
 ```bash
-ln -s "/Users/你的用户名/Documents/Codes/Agent Rules" ~/.agent-rules   # ← 换成你的实际路径
+ln -s "/Users/你的用户名/Documents/Codes/AgentRules" ~/.agent-rules   # ← 换成你的实际路径（路径里不要有空格）
 # 于是 <RULES_DIR> = /Users/你的用户名/.agent-rules
 ```
 
