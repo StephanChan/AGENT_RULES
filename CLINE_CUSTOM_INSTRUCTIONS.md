@@ -26,6 +26,7 @@ ln -s "/Users/你的用户名/Documents/Codes/AgentRules" ~/.agent-rules   # ←
 - **让它自动加载**：把 `<RULES_DIR>/.clinerules/00-agent-rules.md` 同步进 Cline 的**全局规则目录**（路径在 Rules 面板里可见/创建），
   它会在所有项目自动生效，连"第 0 步读规则"都不依赖 agent 自觉：
   `bash <RULES_DIR>/tools/sync-global.sh <Cline全局规则目录>`（幂等；拒绝覆盖非本工具生成的文件，除非加 `--force`）。
+  Windows 没有 `bash` 时用等价脚本 `tools\sync-global.ps1`（`-Force` 等同 `--force`，需 `powershell -ExecutionPolicy Bypass -File` 调用）。
 - **跨工具兜底**：把同样的三行放进 `~/.agents/AGENTS.md`——Cline 会读它，Codex / Cursor 等也认这个标准。
 
 给项目写 `AGENTS.md` 时用模板：`<RULES_DIR>/references/project-agents-template.md`。
